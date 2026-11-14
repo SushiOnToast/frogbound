@@ -2577,6 +2577,7 @@ texture = ExtResource("2_2r41h")
 13:10/0 = 0
 14:10/0 = 0
 15:10/0 = 0
+15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:10/0 = 0
 17:10/0 = 0
 18:10/0 = 0
@@ -2597,12 +2598,15 @@ texture = ExtResource("2_2r41h")
 13:11/0 = 0
 14:11/0 = 0
 15:11/0 = 0
+15:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:11/0 = 0
 17:11/0 = 0
 18:11/0 = 0
 19:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_lewb6"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_arp2o")
 sources/1 = SubResource("TileSetAtlasSource_ux5qa")
 sources/2 = SubResource("TileSetAtlasSource_82cfe")
@@ -2627,3 +2631,4 @@ tile_set = SubResource("TileSet_lewb6")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1858779252]
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true

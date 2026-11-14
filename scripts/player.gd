@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
-const SPEED = 300.0
+const SPEED = 150
 var perm_direction: Vector2
 var animation: String = "idle"
 
