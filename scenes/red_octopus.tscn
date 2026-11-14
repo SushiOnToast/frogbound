@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlc8sux7bveqj"]
 
 [ext_resource type="Texture2D" uid="uid://btucqb7bqxuo" path="res://assets/mobs/RedOctopus.png" id="1_a2ofj"]
+[ext_resource type="Script" uid="uid://c3ry7nt5v178u" path="res://scripts/red_octopus.gd" id="1_oqkjm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2kbi"]
 atlas = ExtResource("1_a2ofj")
@@ -137,9 +138,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qexx"]
+radius = 8.0
+
 [node name="RedOctopus" type="CharacterBody2D" unique_id=1028742701]
+script = ExtResource("1_oqkjm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1087785204]
 sprite_frames = SubResource("SpriteFrames_qrt11")
 animation = &"down"
 autoplay = "down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387734906]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_4qexx")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=2014829356]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
