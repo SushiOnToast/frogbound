@@ -9,7 +9,7 @@ const ENEMIES := {
 }
 
 const MINIBOSS := {
-	"scene": "res://enemies/frog.tscn",
+	"scene": "res://scenes/bossfrog.tscn",
 	"enabled": false,
 	"first_wave": 5,
 	"every": 3,
