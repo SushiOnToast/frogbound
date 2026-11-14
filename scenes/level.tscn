@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://krl71lheqm55" path="res://scenes/TilesetFloor.png" id="4_b121j"]
 [ext_resource type="Texture2D" uid="uid://du8c810wi3vk5" path="res://scenes/TilesetFloorDetail.png" id="5_8c41q"]
 [ext_resource type="PackedScene" uid="uid://bfpgsnvw57dk8" path="res://scenes/player.tscn" id="6_2r41h"]
+[ext_resource type="Script" uid="uid://d0ioa4jvoque5" path="res://scripts/player_camera.gd" id="7_klq6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olg7q"]
 texture = ExtResource("1_ppgk2")
@@ -2612,6 +2613,8 @@ sources/1 = SubResource("TileSetAtlasSource_ux5qa")
 sources/2 = SubResource("TileSetAtlasSource_82cfe")
 
 [node name="Level" type="Node2D" unique_id=1836003705]
+metadata/_edit_vertical_guides_ = [-560.0]
+metadata/_edit_horizontal_guides_ = [-519.0, -477.0, -464.0]
 
 [node name="map" type="Node2D" parent="." unique_id=477685769]
 
@@ -2632,3 +2635,5 @@ tile_set = SubResource("TileSet_lewb6")
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1858779252]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+script = ExtResource("7_klq6b")
