@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -150,7 +150,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -167,7 +167,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,7 +184,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
@@ -199,6 +199,7 @@ script = ExtResource("1_g2els")
 sprite_frames = SubResource("SpriteFrames_4qexx")
 animation = &"walk_up"
 autoplay = "idle_down"
+frame_progress = 0.8861583
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749427081]
 position = Vector2(0.5, 0.5)

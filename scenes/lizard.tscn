@@ -84,7 +84,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"down",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -101,7 +101,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,7 +118,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -135,7 +135,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"up",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e1q3"]
@@ -148,8 +148,9 @@ script = ExtResource("1_eawkj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591814021]
 sprite_frames = SubResource("SpriteFrames_cn4oy")
-animation = &"down"
+animation = &"up"
 autoplay = "down"
+frame_progress = 0.6315888
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196941971]
 position = Vector2(0, 2)
