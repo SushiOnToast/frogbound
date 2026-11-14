@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 func _on_shoot_timer_timeout() -> void:
 	var pellet_scene = load("res://scenes/octopus_projectile.tscn")
 	var pellet = pellet_scene.instantiate()
-	pellet.position = position
+	pellet.global_position = global_position
 	pellet.direction = player_dir
+	pellet.target = player
 	projectileNode.add_child(pellet)
