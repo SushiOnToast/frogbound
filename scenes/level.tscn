@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://c14nrt0ujjpk8" path="res://scripts/enemies.gd" id="8_8c41q"]
 [ext_resource type="PackedScene" uid="uid://b0p256u081kfh" path="res://scenes/lizard.tscn" id="8_b121j"]
 [ext_resource type="PackedScene" uid="uid://dlc8sux7bveqj" path="res://scenes/red_octopus.tscn" id="10_olg7q"]
+[ext_resource type="PackedScene" uid="uid://c25idx4xkrf0g" path="res://scenes/bossfrog.tscn" id="11_8iemx"]
 [ext_resource type="Script" uid="uid://bd3k7gklaucuh" path="res://scripts/wave_manager.gd" id="11_t1rx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olg7q"]
@@ -2652,6 +2653,10 @@ position = Vector2(34, -119)
 
 [node name="RedOctopus" parent="Enemies" unique_id=1028742701 instance=ExtResource("10_olg7q")]
 position = Vector2(119, -41)
+
+[node name="BOSSFROG" parent="Enemies" unique_id=686926870 node_paths=PackedStringArray("player") instance=ExtResource("11_8iemx")]
+position = Vector2(89, -76)
+player = NodePath("../../Player")
 
 [node name="Projectiles" type="Node2D" parent="." unique_id=779006564]
 
