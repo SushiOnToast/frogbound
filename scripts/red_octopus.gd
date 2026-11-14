@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @export var projectileNode: Node2D
 
+signal died
+
 var player_dir: Vector2
 const SPEED = 75
 
@@ -20,7 +22,7 @@ func _ready() -> void:
 	add_to_group("octopi")
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	player_dir = position.direction_to(player.position)
 	animate_sprite(player_dir)
 	

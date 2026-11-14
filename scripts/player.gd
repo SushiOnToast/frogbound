@@ -24,7 +24,7 @@ func animate_sprite(anim: String, direction: Vector2) -> void:
 	animated_sprite_2d.play("%s_%s" % [anim, suffix])
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = movement_input()
 		
 	if direction != Vector2.ZERO:

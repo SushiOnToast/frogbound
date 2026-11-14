@@ -206,6 +206,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=683684155]
 sprite_frames = SubResource("SpriteFrames_lewb6")
-animation = &"Jump"
+animation = &"Attack"
 autoplay = "Idle"
-frame_progress = 0.092669435
+frame = 1
+frame_progress = 0.67031497

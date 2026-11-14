@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://c14nrt0ujjpk8" path="res://scripts/enemies.gd" id="8_8c41q"]
 [ext_resource type="PackedScene" uid="uid://b0p256u081kfh" path="res://scenes/lizard.tscn" id="8_b121j"]
 [ext_resource type="PackedScene" uid="uid://dlc8sux7bveqj" path="res://scenes/red_octopus.tscn" id="10_olg7q"]
+[ext_resource type="Script" uid="uid://bd3k7gklaucuh" path="res://scripts/wave_manager.gd" id="11_t1rx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olg7q"]
 texture = ExtResource("1_ppgk2")
@@ -2653,3 +2654,7 @@ position = Vector2(34, -119)
 position = Vector2(119, -41)
 
 [node name="Projectiles" type="Node2D" parent="." unique_id=779006564]
+
+[node name="WaveManager" type="Node" parent="." unique_id=872263252 node_paths=PackedStringArray("player")]
+script = ExtResource("11_t1rx8")
+player = NodePath("../Player")
