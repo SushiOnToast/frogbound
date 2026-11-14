@@ -21,7 +21,7 @@ var hurt := false
 var hit_landed := false
 
 func _ready() -> void:
-	add_to_group("enemiess")
+	add_to_group("enemies")
 	health = max_health
 	attack_area.monitoring = false
 	sprite.play("idle")
