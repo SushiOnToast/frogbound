@@ -37,3 +37,12 @@ func _on_shoot_timer_timeout() -> void:
 	pellet.direction = player_dir
 	pellet.target = player
 	projectileNode.add_child(pellet)
+	
+@export var max_health: int = 30
+var health: int = max_health
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	if health <= 0:
+		died.emit()
+		queue_free()
