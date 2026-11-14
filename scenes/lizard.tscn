@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0p256u081kfh"]
 
 [ext_resource type="Texture2D" uid="uid://bvv3t2v6ernnd" path="res://assets/mobs/Lizard2.png" id="1_4qrxi"]
+[ext_resource type="Script" uid="uid://c1mgi1b4kyj30" path="res://scripts/lizard.gd" id="1_eawkj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhscj"]
 atlas = ExtResource("1_4qrxi")
@@ -137,9 +138,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7e1q3"]
+radius = 6.0827627
+
 [node name="Lizard" type="CharacterBody2D" unique_id=687837315]
+collision_layer = 4
+script = ExtResource("1_eawkj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591814021]
 sprite_frames = SubResource("SpriteFrames_cn4oy")
 animation = &"down"
 autoplay = "down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196941971]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_7e1q3")
