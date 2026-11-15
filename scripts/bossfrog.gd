@@ -20,6 +20,8 @@ var state := State.CHASE
 var hurt := false
 var hit_landed := false
 
+var dying := false
+
 func _ready() -> void:
 	add_to_group("enemies")
 	health = max_health
@@ -38,8 +40,12 @@ func _physics_process(_delta: float) -> void:
 
 	var dir := to_target.normalized()
 	sprite.flip_h = dir.x > 0   # art faces left, so flip when moving right
-	if sprite.animation != "jump":
+	if sprite.animation != "jump" and not dying:
 		sprite.play("jump")
+	
+	if dying:
+		die()
+		return
 
 	# Speed follows the hop: still on take-off and landing, fastest mid-air
 	var frames := sprite.sprite_frames.get_frame_count("jump")
@@ -76,12 +82,17 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 	hit_landed = true   # one hit per attack
 	if body.has_method("take_damage"):
 		body.take_damage(attack_damage)
+		
+func die():
+	sprite.play("die")
+	await sprite.animation_finished
+	died.emit()
+	queue_free()
 
 func take_damage(amount: float) -> void:
 	health -= amount
 	if health <= 0:
-		died.emit()
-		queue_free()
+		dying = true
 		return
 
 	if state == State.CHARGE or state == State.ATTACK:
