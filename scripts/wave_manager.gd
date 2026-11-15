@@ -1,6 +1,7 @@
 extends Node
 
 @export var player: Node2D
+@export var projectileNode: Node2D
 
 const MAP_MIN := Vector2(-540, -440)
 const MAP_MAX := Vector2(636, 636)
@@ -31,6 +32,8 @@ func spawn_enemy(id: String) -> void:
 	enemy.global_position = random_spawn_pos()
 	enemy.player = player
 	enemy.died.connect(_on_enemy_died.bind(id))
+	if enemy is Octopus:
+		enemy.projectileNode = projectileNode
 	alive += 1
 	add_child(enemy)
 	
