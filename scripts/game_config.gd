@@ -12,7 +12,7 @@ const ENEMIES := {
 const MINIBOSS := {
 	"scene": "res://scenes/BOSSFROG.tscn",
 	"enabled": true,
-	"first_wave": 5,
+	"first_wave": 3,
 	"every": 3,
 	"points": 150,
 }
