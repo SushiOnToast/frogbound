@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var health_bar = $CanvasLayer/Healthbar
 
+
+
 const SHURIKEN_SCENE = preload("res://scenes/shuriken.tscn")
 const SPEED = 150
 const MAX_HEALTH = 100

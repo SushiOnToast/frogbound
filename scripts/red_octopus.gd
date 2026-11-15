@@ -9,6 +9,8 @@ signal died
 var player_dir: Vector2
 const SPEED = 75
 
+var attack_range = 25
+
 func animate_sprite(direction: Vector2) -> void:
 	var suffix: String
 	if abs(direction.x) > abs(direction.y):
@@ -25,6 +27,11 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	player_dir = position.direction_to(player.position)
 	animate_sprite(player_dir)
+	
+	var to_target := player.global_position - global_position
+	if to_target.length() <= attack_range:
+		velocity = Vector2.ZERO
+		return
 	
 	velocity = player_dir * SPEED
 	move_and_slide()

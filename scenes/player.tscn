@@ -194,7 +194,6 @@ size = Vector2(13, 13)
 
 [node name="Player" type="CharacterBody2D" unique_id=1404794937]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1690624140]
@@ -212,8 +211,8 @@ shape = SubResource("RectangleShape2D_tuyoq")
 [node name="Healthbar" type="TextureProgressBar" parent="CanvasLayer" unique_id=2049951196]
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 84.0
-offset_bottom = 60.0
+offset_right = 86.0
+offset_bottom = 46.0
 value = 100.0
 texture_under = ExtResource("4_qlg0r")
 texture_over = ExtResource("5_tuyoq")

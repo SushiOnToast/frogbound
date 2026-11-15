@@ -208,4 +208,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_lewb6")
 animation = &"Jump"
 autoplay = "Idle"
-frame_progress = 0.83318233
+frame_progress = 0.77452576

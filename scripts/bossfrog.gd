@@ -84,13 +84,9 @@ func take_damage(amount: float) -> void:
 		queue_free()
 		return
 
-	if state == State.CHARGE or state == State.ATTACK:
-		sprite.modulate = Color(1, 0.5, 0.5)
-		create_tween().tween_property(sprite, "modulate", Color.WHITE, 0.15)
-	else:
-		hurt = true
-		sprite.play("hit")
-		await sprite.animation_finished
-		hurt = false
-		if state == State.COOLDOWN:
-			sprite.play("idle")
+	hurt = true
+	sprite.play("hit")
+	await sprite.animation_finished
+	hurt = false
+	if state == State.COOLDOWN:
+		sprite.play("idle")
