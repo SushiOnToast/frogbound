@@ -5,14 +5,14 @@ signal wave_changed(new_wave: int)
 
 const ENEMIES := {
 	"lizard":  {"scene": "res://scenes/lizard.tscn",  "unlock_wave": 1, "cost": 1, "weight": 10, "points": 10},
-	"octopus": {"scene": "res://scenes/red_octopus.tscn", "unlock_wave": 3, "cost": 2, "weight": 4,  "points": 30},
-	"t_rex":   {"scene": "res://scenes/t_rex.tscn",   "unlock_wave": 5, "cost": 2, "weight": 5,  "points": 50},
+	"octopus": {"scene": "res://scenes/red_octopus.tscn", "unlock_wave": 2, "cost": 2, "weight": 4,  "points": 30},
+	"t_rex":   {"scene": "res://scenes/t_rex.tscn",   "unlock_wave": 3, "cost": 2, "weight": 5,  "points": 50},
 }
 
 const MINIBOSS := {
-	"scene": "res://scenes/BOSSFROG.tscn",
+	"scene": "res://scenes/bossfrog.tscn",
 	"enabled": true,
-	"first_wave": 3,
+	"first_wave": 5,
 	"every": 3,
 	"points": 150,
 }

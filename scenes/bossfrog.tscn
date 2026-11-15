@@ -278,7 +278,7 @@ radius = 11.045361
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e1q3"]
 radius = 32.0
 
-[node name="BOSSFROG" type="CharacterBody2D" unique_id=686926870]
+[node name="bossfrog" type="CharacterBody2D" unique_id=686926870]
 collision_mask = 8
 script = ExtResource("1_e2ivr")
 
