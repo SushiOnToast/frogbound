@@ -50,6 +50,10 @@ var health: int = max_health
 
 func take_damage(amount: int) -> void:
 	health -= amount
+	
+	animated_sprite_2d.modulate = Color(1, 0.5, 0.5)
+	create_tween().tween_property(animated_sprite_2d, "modulate", Color.WHITE, 0.15)
+	
 	if health <= 0:
 		died.emit()
 		queue_free()

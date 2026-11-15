@@ -141,9 +141,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e1q3"]
 radius = 6.0827627
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eawkj"]
+radius = 7.0
+
 [node name="Lizard" type="CharacterBody2D" unique_id=687837315]
 collision_layer = 4
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_eawkj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591814021]
@@ -155,3 +158,18 @@ frame_progress = 0.29722905
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196941971]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_7e1q3")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=14026423]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=194522616]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_eawkj")
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=726116193]
+wait_time = 0.62
+autostart = true
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_timer_timeout"]

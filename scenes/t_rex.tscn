@@ -212,7 +212,7 @@ script = ExtResource("1_gkl5d")
 sprite_frames = SubResource("SpriteFrames_qrt11")
 animation = &"down"
 autoplay = "down"
-frame_progress = 0.9309777
+frame_progress = 0.20572914
 
 [node name="FireArea" type="Area2D" parent="." unique_id=1180215991]
 
@@ -222,7 +222,7 @@ rotation = 3.1415927
 sprite_frames = SubResource("SpriteFrames_lewb6")
 animation = &"down"
 autoplay = "down"
-frame_progress = 0.37893
+frame_progress = 0.65362227
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" unique_id=709148871]
 position = Vector2(0, 20)
