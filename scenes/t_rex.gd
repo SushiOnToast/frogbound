@@ -46,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 		fire_area.visible = true
 		velocity = Vector2.ZERO
 		# rotates the fire hitbox so it always points at the player
-		fire_area.rotation = player_dir.angle()
+		fire_area.rotation = player_dir.angle() - PI / 2
 
 	animate_sprite(player_dir, is_attacking)
 	move_and_slide()
