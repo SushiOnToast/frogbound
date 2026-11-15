@@ -7,7 +7,7 @@ enum State { CHASE, CHARGE, ATTACK, COOLDOWN }
 @export var max_health := 200.0
 @export var hop_speed := 90.0        
 @export var attack_range := 25.0  
-@export var attack_damage := 20.0
+@export var attack_damage := 50.0
 @export var attack_cooldown := 1.5  # rest time after an attack
 @export var hit_frame := 2      
 
