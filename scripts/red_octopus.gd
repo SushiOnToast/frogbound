@@ -1,7 +1,9 @@
+class_name Octopus 
 extends CharacterBody2D
 
 @export var player: CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var shoot_timer: Timer = $ShootTimer
 @export var projectileNode: Node2D
 
 signal died
@@ -43,7 +45,8 @@ func _on_shoot_timer_timeout() -> void:
 	pellet.global_position = global_position
 	pellet.direction = player_dir
 	pellet.target = player
-	projectileNode.add_child(pellet)
+	if projectileNode:
+		projectileNode.add_child(pellet)
 	
 @export var max_health: int = 30
 var health: int = max_health
