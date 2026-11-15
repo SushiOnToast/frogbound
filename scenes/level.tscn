@@ -2636,7 +2636,6 @@ tile_map_data = PackedByteArray("AADh/x4AAAARAAoAAADh/x8AAAARAAsAAADh/yAAAAARAAw
 tile_set = SubResource("TileSet_lewb6")
 
 [node name="Player" parent="." unique_id=1404794937 instance=ExtResource("6_2r41h")]
-collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1858779252]
 zoom = Vector2(4, 4)
@@ -2686,3 +2685,19 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_8iemx")
 theme_override_font_sizes/font_size = 29
 text = "0 pts"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1972695241]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -263.0
+offset_top = 14.0
+offset_right = -17.0
+offset_bottom = 89.0
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("12_8iemx")
+theme_override_font_sizes/normal_font_size = 18
+text = "WASD/arrows to move
+LMB/SPACE to shoot"
+horizontal_alignment = 2
