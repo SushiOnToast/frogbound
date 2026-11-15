@@ -6,3 +6,4 @@ extends CanvasLayer
 func _process(delta: float) -> void:
 	wave_label.text = "Wave " + str(Game.wave)
 	score_label.text = str(Game.score) + " pts"
+	
