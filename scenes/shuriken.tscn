@@ -7,6 +7,8 @@
 radius = 6.0
 
 [node name="shuriken" type="Area2D" unique_id=1179525373]
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_k18gy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852498327]

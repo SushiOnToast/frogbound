@@ -5,12 +5,12 @@ signal wave_changed(new_wave: int)
 
 const ENEMIES := {
 	"lizard":  {"scene": "res://scenes/lizard.tscn",  "unlock_wave": 1, "cost": 1, "weight": 10, "points": 10},
-	"octopus": {"scene": "res://scenes/octopus.tscn", "unlock_wave": 3, "cost": 3, "weight": 4,  "points": 30},
-	"t_rex":   {"scene": "res://scenes/t_rex.tscn",   "unlock_wave": 2, "cost": 4, "weight": 5,  "points": 50},
+	"octopus": {"scene": "res://scenes/red_octopus.tscn", "unlock_wave": 3, "cost": 3, "weight": 4,  "points": 30},
+	#"t_rex":   {"scene": "res://scenes/t_rex.tscn",   "unlock_wave": 2, "cost": 4, "weight": 5,  "points": 50},
 }
 
 const MINIBOSS := {
-	"scene": "res://scenes/bossfrog.tscn",
+	"scene": "res://scenes/BOSSFROG.tscn",
 	"enabled": true,
 	"first_wave": 5,
 	"every": 3,
@@ -46,12 +46,16 @@ func scene_for(id: String) -> String:
 	
 # more enemies every wave
 func wave_budget(w: int) -> int:
-	return 5 + w * 3
+	return 4 + w * 2
 
 func miniboss_count(w: int) -> int:
-	if not MINIBOSS.enabled or w < MINIBOSS.first_wave:
+	if w < MINIBOSS.first_wave:
 		return 0
-	return 1 if (w - MINIBOSS.first_wave) % MINIBOSS.every == 0 else 0
+	
+	var count: int = 1 + ((w - MINIBOSS.first_wave) / 2)
+	return count;
+	
+	
 
 # randomly picking an enemy that has been unlocked from the list
 func pick_enemy(w: int, budget: int) -> String:

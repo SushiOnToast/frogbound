@@ -12,9 +12,8 @@ var spawning := false
 var between_waves := false
 
 func _ready() -> void:
-	pass
-	#Game.reset()
-	#start_next_wave()
+	Game.reset()
+	start_next_wave()
 	
 func start_next_wave() -> void:
 	between_waves = false
