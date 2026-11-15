@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://sgk33wpbiut6" path="res://scripts/screen_details.gd" id="10_t1rx8"]
 [ext_resource type="Script" uid="uid://bd3k7gklaucuh" path="res://scripts/wave_manager.gd" id="11_t1rx8"]
 [ext_resource type="FontFile" uid="uid://drlwv0nfthp5t" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="12_8iemx"]
+[ext_resource type="AudioStream" uid="uid://cmye4dc5im51i" path="res://assets/music/burgers.ogg" id="13_64w2a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olg7q"]
 texture = ExtResource("1_ppgk2")
@@ -2701,3 +2702,7 @@ theme_override_font_sizes/normal_font_size = 18
 text = "WASD/arrows to move
 LMB/SPACE to shoot"
 horizontal_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=965330444]
+stream = ExtResource("13_64w2a")
+autoplay = true
