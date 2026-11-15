@@ -139,6 +139,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrt11"]
+size = Vector2(16, 17)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rw5kh"]
 atlas = ExtResource("3_a1sj7")
 region = Rect2(0, 0, 25, 30)
@@ -198,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_midy5")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"down",
 "speed": 7.0
 }]
@@ -206,6 +209,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cn4oy"]
 
 [node name="TRex" type="CharacterBody2D" unique_id=773909253]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_gkl5d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=360200066]
@@ -213,6 +218,10 @@ sprite_frames = SubResource("SpriteFrames_qrt11")
 animation = &"down"
 autoplay = "down"
 frame_progress = 0.20572914
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=995838928]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_qrt11")
 
 [node name="FireArea" type="Area2D" parent="." unique_id=1180215991]
 
@@ -222,7 +231,6 @@ rotation = 3.1415927
 sprite_frames = SubResource("SpriteFrames_lewb6")
 animation = &"down"
 autoplay = "down"
-frame_progress = 0.65362227
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" unique_id=709148871]
 position = Vector2(0, 20)
@@ -232,4 +240,5 @@ shape = SubResource("RectangleShape2D_cn4oy")
 wait_time = 0.449
 autostart = true
 
+[connection signal="animation_finished" from="FireArea/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="FireDamageTimer" to="." method="_on_fire_damage_timer_timeout"]
