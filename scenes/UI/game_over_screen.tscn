@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://drevofd025iah"]
 
+[ext_resource type="Script" uid="uid://dh7jnfmi5a8c6" path="res://scripts/game_over_screen.gd" id="1_k3wv6"]
 [ext_resource type="FontFile" uid="uid://1qqtaviv0niv" path="res://assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_yjf6n"]
 
 [node name="GameOverScreen" type="Control" unique_id=41242428]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k3wv6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1694196032]
 layout_mode = 1
@@ -27,9 +29,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -177.5
-offset_top = -115.5
+offset_top = -126.5
 offset_right = 177.5
-offset_bottom = -30.5
+offset_bottom = -41.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_yjf6n")
@@ -42,13 +44,29 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -188.0
-offset_top = 298.0
+offset_top = 287.0
 offset_right = 188.0
-offset_bottom = 331.0
+offset_bottom = 320.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_yjf6n")
 theme_override_font_sizes/font_size = 27
 text = "They bounced back too hard!"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1521622934]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = 326.0
+offset_right = 188.0
+offset_bottom = 359.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.047058824, 1)
+theme_override_fonts/font = ExtResource("1_yjf6n")
+theme_override_font_sizes/font_size = 27
+text = "Score: 0"
+horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="." unique_id=1386681878]
 layout_mode = 1
@@ -56,9 +74,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -188.0
-offset_top = 384.0
+offset_top = 408.0
 offset_right = 188.0
-offset_bottom = 417.0
+offset_bottom = 441.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.87161213, 0.26926968, 0.26378137, 1)
 theme_override_fonts/font = ExtResource("1_yjf6n")

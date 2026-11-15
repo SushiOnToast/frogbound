@@ -67,5 +67,4 @@ func take_damage(amount: int) -> void:
 		die()
 	
 func die() -> void:
-	#should swap to game over scene 
-	pass
+	get_tree().change_scene_to_file("res://scenes/UI/game_over_screen.tscn")

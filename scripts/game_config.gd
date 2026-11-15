@@ -7,7 +7,6 @@ const ENEMIES := {
 	"lizard":  {"scene": "res://scenes/lizard.tscn",  "unlock_wave": 1, "cost": 1, "weight": 10, "points": 10},
 	"octopus": {"scene": "res://scenes/octopus.tscn", "unlock_wave": 3, "cost": 3, "weight": 4,  "points": 30},
 	"t_rex":   {"scene": "res://scenes/t_rex.tscn",   "unlock_wave": 2, "cost": 4, "weight": 5,  "points": 50},
-	"spider":  {"scene": "res://scenes/spider_range.tscn",  "unlock_wave": 1, "cost": 2, "weight": 8,  "points": 20},
 }
 
 const MINIBOSS := {

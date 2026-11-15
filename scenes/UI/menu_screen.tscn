@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://b11bbuudq4l08"]
+
+[ext_resource type="Script" uid="uid://n8s3d76fkf8l" path="res://scripts/menu_screen.gd" id="1_6ibb8"]
+[ext_resource type="Texture2D" uid="uid://ccunx7aicb7mv" path="res://assets/UI/Idle40x40.png" id="1_dlyh0"]
+[ext_resource type="FontFile" uid="uid://mytkj34t7sh4" path="res://assets/fonts/karmatic-arcade/ka1.ttf" id="2_6ibb8"]
+[ext_resource type="FontFile" uid="uid://1qqtaviv0niv" path="res://assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_l3bn1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6inuj"]
+atlas = ExtResource("1_dlyh0")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgkvk"]
+atlas = ExtResource("1_dlyh0")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snu88"]
+atlas = ExtResource("1_dlyh0")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqe08"]
+atlas = ExtResource("1_dlyh0")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntrb3"]
+atlas = ExtResource("1_dlyh0")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7e1q3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6inuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgkvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snu88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqe08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntrb3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="MenuScreen" type="Control" unique_id=2050521933]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_6ibb8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1944923430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427807537]
+position = Vector2(577, 238.00002)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7e1q3")
+autoplay = "default"
+frame_progress = 0.1390962
+
+[node name="Label" type="Label" parent="." unique_id=823836649]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.5
+offset_top = -34.0
+offset_right = 237.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6784314, 0.7372549, 0.22745098, 1)
+theme_override_fonts/font = ExtResource("2_6ibb8")
+theme_override_font_sizes/font_size = 70
+text = "FROGBOUND"
+
+[node name="Label2" type="Label" parent="." unique_id=41870439]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = 57.5
+offset_right = 161.5
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6784314, 0.7372549, 0.22745098, 1)
+theme_override_fonts/font = ExtResource("3_l3bn1")
+theme_override_font_sizes/font_size = 30
+text = "Press Enter to Start"
