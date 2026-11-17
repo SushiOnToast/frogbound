@@ -209,7 +209,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cn4oy"]
 
 [node name="TRex" type="CharacterBody2D" unique_id=773909253]
-collision_layer = 7
+collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_gkl5d")
 

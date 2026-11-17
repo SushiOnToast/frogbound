@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 	# Spins the shuriken while flying
 	rotation += 15.0 * delta 
 	
-	# Same out-of-bounds cleanup as octopus_projectile.gd
 	if position.x < -560 or position.x > 656 or position.y < -464 or position.y > 656:
 		queue_free()
 

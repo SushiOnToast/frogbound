@@ -279,7 +279,8 @@ radius = 11.045361
 radius = 32.0
 
 [node name="bossfrog" type="CharacterBody2D" unique_id=686926870]
-collision_mask = 8
+collision_layer = 4
+collision_mask = 15
 script = ExtResource("1_e2ivr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=683684155]
