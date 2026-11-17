@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://krl71lheqm55" path="res://assets/map/TilesetFloor.png" id="4_b121j"]
 [ext_resource type="Texture2D" uid="uid://du8c810wi3vk5" path="res://assets/map/TilesetFloorDetail.png" id="5_8c41q"]
 [ext_resource type="PackedScene" uid="uid://bfpgsnvw57dk8" path="res://scenes/player.tscn" id="6_2r41h"]
-[ext_resource type="Script" uid="uid://d0ioa4jvoque5" path="res://scripts/player_camera.gd" id="7_klq6b"]
-[ext_resource type="Script" uid="uid://c14nrt0ujjpk8" path="res://scripts/enemies.gd" id="8_8c41q"]
+[ext_resource type="Script" uid="uid://d0ioa4jvoque5" path="res://scripts/player/player_camera.gd" id="7_klq6b"]
+[ext_resource type="Script" uid="uid://c14nrt0ujjpk8" path="res://scripts/mobs/enemies.gd" id="8_8c41q"]
 [ext_resource type="FontFile" uid="uid://mytkj34t7sh4" path="res://assets/fonts/karmatic-arcade/ka1.ttf" id="10_olg7q"]
-[ext_resource type="Script" uid="uid://sgk33wpbiut6" path="res://scripts/screen_details.gd" id="10_t1rx8"]
-[ext_resource type="Script" uid="uid://bd3k7gklaucuh" path="res://scripts/wave_manager.gd" id="11_t1rx8"]
+[ext_resource type="Script" uid="uid://sgk33wpbiut6" path="res://scripts/UI/screen_details.gd" id="10_t1rx8"]
+[ext_resource type="Script" uid="uid://bd3k7gklaucuh" path="res://scripts/miscellaneous/wave_manager.gd" id="11_t1rx8"]
 [ext_resource type="FontFile" uid="uid://drlwv0nfthp5t" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="12_8iemx"]
 [ext_resource type="AudioStream" uid="uid://cmye4dc5im51i" path="res://assets/music/burgers.ogg" id="13_64w2a"]
 
@@ -2705,4 +2705,5 @@ horizontal_alignment = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=965330444]
 stream = ExtResource("13_64w2a")
+volume_db = -33.761
 autoplay = true

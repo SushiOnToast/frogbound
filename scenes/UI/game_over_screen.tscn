@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drevofd025iah"]
 
-[ext_resource type="Script" uid="uid://dh7jnfmi5a8c6" path="res://scripts/game_over_screen.gd" id="1_k3wv6"]
+[ext_resource type="Script" uid="uid://dh7jnfmi5a8c6" path="res://scripts/UI/game_over_screen.gd" id="1_k3wv6"]
 [ext_resource type="FontFile" uid="uid://1qqtaviv0niv" path="res://assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_yjf6n"]
 
 [node name="GameOverScreen" type="Control" unique_id=41242428]

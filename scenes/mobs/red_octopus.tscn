@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlc8sux7bveqj"]
 
 [ext_resource type="Texture2D" uid="uid://btucqb7bqxuo" path="res://assets/mobs/RedOctopus.png" id="1_a2ofj"]
-[ext_resource type="Script" uid="uid://c3ry7nt5v178u" path="res://scripts/red_octopus.gd" id="1_oqkjm"]
+[ext_resource type="Script" uid="uid://c3ry7nt5v178u" path="res://scripts/mobs/red_octopus.gd" id="1_oqkjm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2kbi"]
 atlas = ExtResource("1_a2ofj")

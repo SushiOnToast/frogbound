@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpn8g7g2ivlwf"]
 
 [ext_resource type="Texture2D" uid="uid://jap4im2ysi3f" path="res://assets/miscellaneous/SilverCoin.png" id="1_2h1d7"]
-[ext_resource type="Script" uid="uid://diusmc3ipbnee" path="res://scripts/octopus_projectile.gd" id="1_pqegq"]
+[ext_resource type="Script" uid="uid://diusmc3ipbnee" path="res://scripts/miscellaneous/octopus_projectile.gd" id="1_pqegq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qexx"]
 radius = 3.1622777

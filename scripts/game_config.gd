@@ -4,9 +4,9 @@ signal score_changed(new_score: int)
 signal wave_changed(new_wave: int)
 
 const ENEMIES := {
-	"lizard":  {"scene": "res://scenes/lizard.tscn",  "unlock_wave": 1, "cost": 1, "weight": 10, "points": 10},
-	"octopus": {"scene": "res://scenes/red_octopus.tscn", "unlock_wave": 2, "cost": 2, "weight": 4,  "points": 30},
-	"t_rex":   {"scene": "res://scenes/t_rex.tscn",   "unlock_wave": 3, "cost": 2, "weight": 5,  "points": 50},
+	"lizard":  {"scene": "res://scenes/mobs/lizard.tscn",  "unlock_wave": 1, "cost": 1, "weight": 10, "points": 10},
+	"octopus": {"scene": "res://scenes/mobs/red_octopus.tscn", "unlock_wave": 2, "cost": 2, "weight": 4,  "points": 30},
+	"t_rex":   {"scene": "res://scenes/mobs/t_rex.tscn",   "unlock_wave": 3, "cost": 2, "weight": 5,  "points": 50},
 }
 
 const MINIBOSS := {

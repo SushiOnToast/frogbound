@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 
 
-const SHURIKEN_SCENE = preload("res://scenes/shuriken.tscn")
+const SHURIKEN_SCENE = preload("res://scenes/miscellaenous/shuriken.tscn")
 const SPEED = 150
 const MAX_HEALTH = 100
 
