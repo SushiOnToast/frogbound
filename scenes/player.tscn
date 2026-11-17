@@ -187,8 +187,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(13, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xefu"]
+size = Vector2(11, 12)
 
 [sub_resource type="Gradient" id="Gradient_qhqgy"]
 
@@ -229,8 +229,8 @@ autoplay = "idle_down"
 frame_progress = 0.2548778
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749427081]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_tuyoq")
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_8xefu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010151468]
 
