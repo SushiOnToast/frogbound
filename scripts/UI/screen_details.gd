@@ -16,7 +16,7 @@ func _ready() -> void:
 	wave_label.text = "Wave " + str(Game.wave)
 	Game.wave_changed.connect(_on_wave_changed)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	score_label.text = str(Game.score) + " pts"
 
 func _on_wave_changed(new_wave: int) -> void:

@@ -33,7 +33,7 @@ func spawn_enemy(id: String) -> void:
 	enemy.player = player
 	enemy.died.connect(_on_enemy_died.bind(id))
 	if enemy is Octopus:
-		enemy.projectileNode = projectileNode
+		enemy.projectile_node = projectileNode
 	alive += 1
 	add_child(enemy)
 	

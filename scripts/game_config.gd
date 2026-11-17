@@ -10,53 +10,61 @@ const ENEMIES := {
 }
 
 const MINIBOSS := {
-	"scene": "res://scenes/bossfrog.tscn",
+	"scene": "res://scenes/mobs/bossfrog.tscn",
 	"enabled": true,
 	"first_wave": 5,
-	"every": 3,
-	"points": 150,
+	"points": 9000,
 }
 
 var wave := 0
 var score := 0
+
+const DEFAULT_SPEED := 100.0
+const DEFAULT_HEALTH := 30.0
+
 
 func reset() -> void:
 	wave = 0
 	score = 0
 	score_changed.emit(score)
 	
+	
 func next_wave() -> int:
 	wave += 1
 	wave_changed.emit(wave)
 	return wave
 
+
 func add_score(amount: int) -> void:
 	score += amount
 	score_changed.emit(score)
+
 
 func points_for(id: String) -> int:
 	if id == "miniboss":
 		return MINIBOSS.points
 	return ENEMIES[id].points
 
+
 func scene_for(id: String) -> String:
 	if id == "miniboss":
 		return MINIBOSS.scene
 	return ENEMIES[id].scene
 	
+	
 # more enemies every wave
 func wave_budget(w: int) -> int:
 	return 4 + w * 2
+
 
 func miniboss_count(w: int) -> int:
 	if w < MINIBOSS.first_wave:
 		return 0
 	
-	var count: int = 1 + ((w - MINIBOSS.first_wave) / 2)
+	var count: int = 1 + ((w - MINIBOSS.first_wave) / 2) 
 	return count;
 	
 	
-
 # randomly picking an enemy that has been unlocked from the list
 func pick_enemy(w: int, budget: int) -> String:
 	var pool: Array[String] = []
@@ -76,6 +84,7 @@ func pick_enemy(w: int, budget: int) -> String:
 		if roll <= 0:
 			return id
 	return pool[0]
+
 
 # Builds the list of enemy ids to spawn for a wave
 func build_wave(w: int) -> Array[String]:
