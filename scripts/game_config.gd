@@ -40,8 +40,6 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		if Cutscene.playing:
-			return
 		if state == State.PLAYING:
 			pause_game()
 		elif state == State.PAUSED:
