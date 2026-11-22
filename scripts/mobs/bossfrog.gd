@@ -112,6 +112,7 @@ func take_damage(amount: float) -> void:
 		return
 
 	health -= amount
+	Sfx.play_hit()
 
 	if health <= 0:
 		dying = true
@@ -138,9 +139,18 @@ func take_damage(amount: float) -> void:
 
 
 func die() -> void:
+	Sfx.play_enemy_die()
 	animated_sprite_2d.play("die")
 
 	await animated_sprite_2d.animation_finished
-
+	
+	_spawn_health_pack()
 	died.emit()
 	queue_free()
+
+func _spawn_health_pack() -> void:
+	if randf() >= 0.6:
+		return
+	var pack = load("res://scenes/miscellaenous/health_pack.tscn").instantiate()
+	pack.global_position = global_position
+	get_parent().add_child(pack)

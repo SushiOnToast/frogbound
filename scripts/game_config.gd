@@ -2,6 +2,9 @@ extends Node
 
 signal score_changed(new_score: int)
 signal wave_changed(new_wave: int)
+signal state_changed(new_state: State)
+
+enum State { MENU, PLAYING, PAUSED, GAME_OVER }
 
 const ENEMIES := {
 	"lizard":  {"scene": "res://scenes/mobs/lizard.tscn",  "unlock_wave": 1, "cost": 1, "weight": 10, "points": 10},
@@ -16,12 +19,111 @@ const MINIBOSS := {
 	"points": 9000,
 }
 
+const LEVEL_SCENE := "res://scenes/level.tscn"
+const MENU_SCENE := "res://scenes/UI/menu_screen.tscn"
+const GAME_OVER_SCENE := "res://scenes/UI/game_over_screen.tscn"
+const PAUSE_SCREEN_SCENE := "res://scenes/UI/pause_screen.tscn"
+
 var wave := 0
 var score := 0
+var state: State = State.MENU
 
 const DEFAULT_SPEED := 100.0
 const DEFAULT_HEALTH := 30.0
 
+var _pause_layer: CanvasLayer = null
+
+func _ready() -> void:
+	# The manager shuodl keep receiving input while the tree is paused otherwise esc wouldnt unpause the game
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		if Cutscene.playing:
+			return
+		if state == State.PLAYING:
+			pause_game()
+		elif state == State.PAUSED:
+			resume_game()
+
+
+func _set_state(new_state: State) -> void:
+	if state == new_state:
+		return
+	state = new_state
+	state_changed.emit(state)
+
+
+func start_game() -> void:
+	Sfx.play_click()
+	reset()
+	_free_pause_overlay()
+	get_tree().paused = false
+	_set_state(State.PLAYING)
+	get_tree().change_scene_to_file(LEVEL_SCENE)
+
+
+func pause_game() -> void:
+	if state != State.PLAYING:
+		return
+	_set_state(State.PAUSED)
+	get_tree().paused = true
+	_show_pause_overlay()
+
+
+func resume_game() -> void:
+	if state != State.PAUSED:
+		return
+	_free_pause_overlay()
+	get_tree().paused = false
+	_set_state(State.PLAYING)
+
+
+func toggle_pause() -> void:
+	if state == State.PLAYING:
+		pause_game()
+	elif state == State.PAUSED:
+		resume_game()
+
+
+func game_over() -> void:
+	if state == State.GAME_OVER:
+		return
+	Sfx.play_game_over()
+	_free_pause_overlay()
+	get_tree().paused = false
+	_set_state(State.GAME_OVER)
+	get_tree().change_scene_to_file.call_deferred(GAME_OVER_SCENE)
+
+
+func to_menu() -> void:
+	_free_pause_overlay()
+	get_tree().paused = false
+	_set_state(State.MENU)
+	get_tree().change_scene_to_file(MENU_SCENE)
+
+
+func mark_playing() -> void:
+	_set_state(State.PLAYING)
+
+
+func _show_pause_overlay() -> void:
+	if _pause_layer != null:
+		return
+	var layer := CanvasLayer.new()
+	layer.layer = 10
+	layer.process_mode = Node.PROCESS_MODE_ALWAYS
+	var overlay: Control = load(PAUSE_SCREEN_SCENE).instantiate()
+	layer.add_child(overlay)
+	get_tree().root.add_child(layer)
+	_pause_layer = layer
+
+
+func _free_pause_overlay() -> void:
+	if is_instance_valid(_pause_layer):
+		_pause_layer.queue_free()
+	_pause_layer = null
 
 func reset() -> void:
 	wave = 0

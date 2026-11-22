@@ -17,9 +17,6 @@ func _ready() -> void:
 	super._ready()
 	
 	fire_area.visible = false
-	fire_sprite.animation_finished.connect(
-		_on_fire_sprite_animation_finished
-	)
 
 
 func _physics_process(_delta: float) -> void:
@@ -62,10 +59,15 @@ func breathe_fire() -> void:
 
 func stop_fire() -> void:
 	is_attacking = false
+	fire_area.visible = false
+	fire_sprite.stop()
 
 
 func _on_fire_sprite_animation_finished() -> void:
-	if not is_attacking:
+	if is_attacking:
+		fire_sprite.frame = 0
+		fire_sprite.play()
+	else:
 		fire_area.visible = false
 
 

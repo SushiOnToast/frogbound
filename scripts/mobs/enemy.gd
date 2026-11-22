@@ -49,6 +49,7 @@ func animate_sprite(direction: Vector2) -> void:
 
 func take_damage(amount: float) -> void:
 	health -= amount
+	Sfx.play_hit()
 
 	animated_sprite_2d.modulate = Color(1, 0.5, 0.5)
 	create_tween().tween_property(
@@ -63,5 +64,6 @@ func take_damage(amount: float) -> void:
 
 
 func die() -> void:
+	Sfx.play_enemy_die()
 	died.emit()
 	queue_free()

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dde4daxbjbf6d" path="res://assets/player/Idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://t1fg7vkpembw" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://fa0urx4dfj60" path="res://assets/player/Walk.png" id="3_qhqgy"]
+[ext_resource type="FontFile" uid="uid://drlwv0nfthp5t" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_health"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -190,33 +191,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xefu"]
 size = Vector2(11, 12)
 
-[sub_resource type="Gradient" id="Gradient_qhqgy"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qlg0r"]
-gradient = SubResource("Gradient_qhqgy")
-width = 120
-height = 16
-
-[sub_resource type="Gradient" id="Gradient_dqkch"]
-interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.0097402595, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tuyoq"]
-gradient = SubResource("Gradient_dqkch")
-width = 120
-height = 16
-
-[sub_resource type="GDScript" id="GDScript_qlg0r"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn4oy"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
 [node name="Player" type="CharacterBody2D" unique_id=1404794937]
 collision_layer = 2
 collision_mask = 5
@@ -234,20 +208,22 @@ shape = SubResource("RectangleShape2D_8xefu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010151468]
 
-[node name="Healthbar" type="TextureProgressBar" parent="CanvasLayer" unique_id=2119962150]
+[node name="HeartsBar" type="HBoxContainer" parent="CanvasLayer" unique_id=377560848]
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 140.0
-offset_bottom = 36.0
-value = 100.0
-texture_under = SubResource("GradientTexture2D_qlg0r")
-texture_progress = SubResource("GradientTexture2D_tuyoq")
-script = SubResource("GDScript_qlg0r")
+offset_right = 320.0
+offset_bottom = 48.0
+theme_override_constants/separation = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Healthbar" unique_id=1302236576]
-layout_mode = 0
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 122.0
-offset_bottom = 18.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cn4oy")
+[node name="HealthLabel" type="Label" parent="CanvasLayer" unique_id=987654321]
+offset_left = 20.0
+offset_top = 48.0
+offset_right = 140.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_health")
+theme_override_font_sizes/font_size = 16
+text = "100 / 100"

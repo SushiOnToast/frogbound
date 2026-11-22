@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq0o6gpwbaig8"
-path="res://.godot/imported/1-Hearth_Bar_Outline.png-89d866321bf2cf673e118835b8cd2391.ctex"
+uid="uid://chedhjcfu1k04"
+path="res://.godot/imported/health_pack.png-825b311c1ccba551563712509ba5f36a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/1-Hearth_Bar_Outline.png"
-dest_files=["res://.godot/imported/1-Hearth_Bar_Outline.png-89d866321bf2cf673e118835b8cd2391.ctex"]
+source_file="res://assets/miscellaneous/health_pack.png"
+dest_files=["res://.godot/imported/health_pack.png-825b311c1ccba551563712509ba5f36a.ctex"]
 
 [params]
 
