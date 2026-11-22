@@ -3,6 +3,8 @@ extends Node
 @export var player: Node2D
 @export var projectileNode: Node2D
 
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
+
 const MAP_MIN := Vector2(-540, -440)
 const MAP_MAX := Vector2(636, 636)
 const SPAWN_INTERVAL := 0.4
@@ -12,7 +14,8 @@ var alive := 0
 var spawning := false
 var between_waves := false
 
-func _ready() -> void:
+func _on_canvas_layer_start_game() -> void:
+	audio_stream_player.play()
 	Game.reset()
 	for id in ["lizard", "octopus", "t_rex", "miniboss"]:
 		load(Game.scene_for(id))

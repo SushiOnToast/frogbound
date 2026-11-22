@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var hearts_bar = $CanvasLayer/HeartsBar
 @onready var health_label = $CanvasLayer/HealthLabel
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+
+var cutscene_freeze = false
 
 const MAX_HEALTH = 100
 
@@ -38,7 +41,7 @@ const SHURIKEN_SCENE = preload("res://scenes/miscellaenous/shuriken.tscn")
 const SPEED = 150
 
 var health: int = MAX_HEALTH
-var perm_direction: Vector2
+var perm_direction: Vector2 = Vector2.DOWN
 var animation: String = "idle"
 var _displayed_health: float = MAX_HEALTH
 var _hearts: Array[TextureRect] = []
@@ -90,6 +93,12 @@ func animate_sprite(anim: String, direction: Vector2) -> void:
 	
 
 func _physics_process(_delta: float) -> void:
+	if cutscene_freeze:
+		canvas_layer.hide()
+		return
+	else:
+		canvas_layer.show()
+	
 	var direction: Vector2 = movement_input()
 		
 	if direction != Vector2.ZERO:

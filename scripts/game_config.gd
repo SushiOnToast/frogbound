@@ -24,6 +24,8 @@ const MENU_SCENE := "res://scenes/UI/menu_screen.tscn"
 const GAME_OVER_SCENE := "res://scenes/UI/game_over_screen.tscn"
 const PAUSE_SCREEN_SCENE := "res://scenes/UI/pause_screen.tscn"
 
+var cutscene_playing := false
+
 var wave := 0
 var score := 0
 var state: State = State.MENU

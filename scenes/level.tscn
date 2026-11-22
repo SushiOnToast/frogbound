@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://blyrwel5vtouv"]
 
+[ext_resource type="Script" uid="uid://bfowu1subhls1" path="res://scripts/level_manager.gd" id="1_fpun6"]
 [ext_resource type="Texture2D" uid="uid://bi46xs7sog0e5" path="res://assets/map/TilesetVillageAbandoned.png" id="1_ppgk2"]
 [ext_resource type="Texture2D" uid="uid://dl4vitp7js6r" path="res://assets/map/TilesetDesert.png" id="2_2r41h"]
 [ext_resource type="Texture2D" uid="uid://ba4c0qlaey3ln" path="res://assets/map/TilesetNature.png" id="3_klq6b"]
@@ -2619,6 +2620,7 @@ sources/1 = SubResource("TileSetAtlasSource_ux5qa")
 sources/2 = SubResource("TileSetAtlasSource_82cfe")
 
 [node name="Level" type="Node2D" unique_id=1836003705]
+script = ExtResource("1_fpun6")
 metadata/_edit_vertical_guides_ = [-560.0]
 metadata/_edit_horizontal_guides_ = [-519.0, -477.0, -464.0]
 
@@ -2687,7 +2689,7 @@ theme_override_fonts/font = ExtResource("12_8iemx")
 theme_override_font_sizes/font_size = 29
 text = "0 pts"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1972695241]
+[node name="Instructions" type="RichTextLabel" parent="CanvasLayer" unique_id=1972695241]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -2703,7 +2705,18 @@ text = "WASD/arrows to move
 LMB/SPACE to shoot"
 horizontal_alignment = 2
 
+[node name="Cover" type="ColorRect" parent="CanvasLayer" unique_id=2052536755]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=965330444]
 stream = ExtResource("13_64w2a")
 volume_db = -33.761
-autoplay = true
+
+[connection signal="end_cutscene" from="." to="CanvasLayer" method="_on_level_end_cutscene"]
+[connection signal="start_cutscene" from="." to="CanvasLayer" method="_on_level_start_cutscene"]
+[connection signal="start_game" from="CanvasLayer" to="WaveManager" method="_on_canvas_layer_start_game"]

@@ -141,9 +141,10 @@ func apply_dialogue_line() -> void:
 		portrait.texture = load(portrait_path) 
 	else:
 		portrait.texture = null
-		# we can also make the dialogue box change here to acommodate for no image
+		
 	var sound_path = "res://assets/dialogue/talk_sounds/%s.wav" % character_string
-	audio_stream_player.stream = load(sound_path)
+	if FileAccess.file_exists(portrait_path):
+		audio_stream_player.stream = load(sound_path) 
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
