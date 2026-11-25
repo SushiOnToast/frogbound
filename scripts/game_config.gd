@@ -30,6 +30,10 @@ var wave := 0
 var score := 0
 var state: State = State.MENU
 
+const HIGH_SCORE_PATH := "user://high_score.txt"
+var high_score := 0
+var is_new_high_score := false
+
 const DEFAULT_SPEED := 100.0
 const DEFAULT_HEALTH := 30.0
 
@@ -38,6 +42,7 @@ var _pause_layer: CanvasLayer = null
 func _ready() -> void:
 	# The manager shuodl keep receiving input while the tree is paused otherwise esc wouldnt unpause the game
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_load_high_score()
 
 
 func _input(event: InputEvent) -> void:
@@ -94,6 +99,14 @@ func game_over() -> void:
 	_free_pause_overlay()
 	get_tree().paused = false
 	_set_state(State.GAME_OVER)
+	
+	if score > high_score:
+		high_score = score
+		is_new_high_score = true
+		_save_high_score()
+	else:
+		is_new_high_score = false
+		
 	get_tree().change_scene_to_file.call_deferred(GAME_OVER_SCENE)
 
 
@@ -202,3 +215,13 @@ func build_wave(w: int) -> Array[String]:
 		queue.append("miniboss")
 	queue.shuffle()
 	return queue
+	
+func _load_high_score() -> void:
+	if not FileAccess.file_exists(HIGH_SCORE_PATH):
+		return
+	var file:= FileAccess.open(HIGH_SCORE_PATH, FileAccess.READ)
+	high_score = int(file.get_as_text().strip_edges())
+	
+func _save_high_score() -> void:
+	var file := FileAccess.open(HIGH_SCORE_PATH, FileAccess.WRITE)
+	file.store_string(str(high_score))
