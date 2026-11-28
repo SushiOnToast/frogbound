@@ -53,7 +53,6 @@ func _ready() -> void:
 	_heart_empty_texture = _make_heart_texture(false, false)
 	_build_hearts()
 	_update_health_ui()
-	health
 
 static func _make_heart_texture(filled: bool, half: bool) -> Texture2D:
 	var w := 9 * HEART_PIXEL_SCALE

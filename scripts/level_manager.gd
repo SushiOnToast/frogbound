@@ -54,3 +54,4 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	end_cutscene.emit()
 	player.cutscene_freeze = false
 	player.perm_direction = Vector2.DOWN
+	player.show_health()
