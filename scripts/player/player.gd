@@ -81,7 +81,6 @@ static func movement_input() -> Vector2:
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 		
 	return direction
-	
 
 func animate_sprite(anim: String, direction: Vector2) -> void:
 	var suffix: String
@@ -90,14 +89,13 @@ func animate_sprite(anim: String, direction: Vector2) -> void:
 	else:
 		suffix = "down" if direction.y > 0 else "up"
 	animated_sprite_2d.play("%s_%s" % [anim, suffix])
-	
+
+func show_health():
+	canvas_layer.show()
 
 func _physics_process(_delta: float) -> void:
 	if cutscene_freeze:
-		canvas_layer.hide()
 		return
-	else:
-		canvas_layer.show()
 	
 	var direction: Vector2 = movement_input()
 		

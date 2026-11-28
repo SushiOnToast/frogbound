@@ -56,36 +56,15 @@ func _on_wave_changed(new_wave: int) -> void:
 	_tween.tween_property(wave_label, "scale", _home_scale, 0.5) \
 		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
-
 func _on_level_start_cutscene() -> void:
 	wave_label.hide()
 	score_label.hide()
 	instructions.hide()
 
-
 func _on_level_end_cutscene() -> void:
-	cinematic_tween = create_tween()
-	cinematic_tween.set_parallel(true)
-
-	cinematic_tween.tween_property(
-		cover,
-		"modulate:a",
-		0,
-		0.5
-	)
-
-	cinematic_tween.tween_property(
-		cover,
-		"modulate:a",
-		0,
-		0.5
-	)
-	
 	wave_label.show()
 	score_label.show()
 	instructions.show()
 
-	await cinematic_tween.finished
-	
 	await get_tree().create_timer(1).timeout
 	start_game.emit()

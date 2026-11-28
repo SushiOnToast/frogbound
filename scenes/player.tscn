@@ -207,6 +207,7 @@ position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_8xefu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010151468]
+visible = false
 
 [node name="HeartsBar" type="HBoxContainer" parent="CanvasLayer" unique_id=377560848]
 offset_left = 20.0

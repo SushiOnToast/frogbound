@@ -3,4 +3,11 @@ someone: [wave]Psst...[/wave]
 someone: [wave]Heeeeyyy, wake up buddy...[/wave]
 someone: Hello??
 someone: [shake]WAKE UPPPP[/shake]
+$> move_player_above(false)
+freg: [wave][speed=0.35]gahhhhhhhh[/speed=0.35][/wave]
+freg: [wave][speed=0.35]mmmmm sushi raining out of the skyyy[/speed=0.35][/wave]
+someone: You're still tired silly, move around a bit! (tip: use WASD to move)
+$> move_tutorial()
+someone: Great! How do you feel now?
+freg: Eh, I suppose I'm awake now.
 => END

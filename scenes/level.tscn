@@ -2706,12 +2706,16 @@ LMB/SPACE to shoot"
 horizontal_alignment = 2
 
 [node name="Cover" type="ColorRect" parent="CanvasLayer" unique_id=2052536755]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Overlay" type="CanvasLayer" parent="." unique_id=305970078]
+layer = 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=965330444]
 stream = ExtResource("13_64w2a")
